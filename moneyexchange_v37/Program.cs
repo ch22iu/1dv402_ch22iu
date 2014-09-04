@@ -124,7 +124,7 @@ namespace moneyexchange_v37
             {
                 if (notes[i] > 0)
                 {
-                    Console.WriteLine("{0,-5} : {1,3:C}", denom[i], notes[i]);
+                    Console.WriteLine("{0,-5:C} : {1,3}", denom[i], notes[i]);
                 }
 
             }
