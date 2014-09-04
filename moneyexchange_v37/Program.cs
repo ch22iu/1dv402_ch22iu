@@ -13,6 +13,28 @@ namespace moneyexchange_v37
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Loading application...");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 5% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 15% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 25% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 35% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 50% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 85% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 99% finish.");
+            System.Threading.Thread.Sleep(600);
+            Console.WriteLine("Application 100% finish.");
+            System.Threading.Thread.Sleep(200);
+            Console.WriteLine("Reloading Interface...");
+            System.Threading.Thread.Sleep(1000);
+            Console.Clear();
+
             ConsoleKeyInfo anyKey;
             uint[] denom = new uint[] { 500, 100, 50, 20, 10, 5, 1 };
             uint[] addings = new uint[denom.Length];
