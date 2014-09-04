@@ -42,15 +42,23 @@ namespace moneyexchange_v37
         private static double ReadPositiveDouble(string prompt = null)
         {
             double startValue = 0;
-            bool startReading = true;
-            while (startReading)
+            double startReading = 0;
+            while (startReading < 1)
             {
-
+                try
                 {
                     // Skriver ut..
                     if (prompt != null)
                     {
-                        Console.Write(prompt);
+                        ViewMessage(prompt);
+                        startValue = double.Parse(Console.ReadLine());
+                        startReading = Math.Round(startValue);
+
+                        if (startReading < 1)
+                        {
+                            ViewMessage("Error amount to small!", true);
+                        }
+                        catch (FormatException)
                     }
                     startValue = 0;
                     // Kollar upp och byter ut värde.
