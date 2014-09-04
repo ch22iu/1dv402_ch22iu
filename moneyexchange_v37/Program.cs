@@ -50,6 +50,19 @@ namespace moneyexchange_v37
             }
             return startValue;
         }
+        static private uint[] SplitIntoDenom(uint changeValue, uint[] denom)
+        {
+            uint myReceipts = 0;
+            uint[] myDenom = new uint[denom.Length];
+            for (int i = 0; i < denom.Length; i++)
+            {
+                myReceipts = changeValue / denom[i];
+                myDenom[i] = myReceipts;
+                changeValue = changeValue % denom[i]<
+
+            }
+                return myReceipts
+        }
         // Skriver ut ett meddelande ifall om något är fel.
         // Om ett meddelande har något fel så skriver den ut annars inte.
         static private void ViewMessage(string message, bool isError = false)
