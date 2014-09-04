@@ -110,27 +110,34 @@ namespace moneyexchange_v37
             Console.WriteLine("\n");
             Console.WriteLine("My Receipts");
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("{0,-15} : {1,10:c}","Total", subtotal);
-            Console.WriteLine("{0,-15} : {1,10:c2}", "Money paid in", cash);
-            Console.WriteLine("{0,-15} : {1,10:c2}","Amount Rounding", Amount);
-            Console.WriteLine("{0,-15} : {1,10:c2}", "New amount", total);
+            Console.WriteLine("{0,-15} : {1,10:C}","Total", subtotal);
+            Console.WriteLine("{0,-15} : {1,10:C}", "Money paid in", cash);
+            Console.WriteLine("{0,-15} : {1,10:C}","Amount Rounding", Amount);
+            Console.WriteLine("{0,-15} : {1,10:C}", "New amount", total);
 
-            Console.WriteLine("{0,-15} : {1,10:c2}", "Money back", charge);
+            Console.WriteLine("{0,-15} : {1,10:C}", "Money back", charge);
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
-            Console.WriteLine("\n");
-            Console.WriteLine("{0,-15} : {1,10:c2}","You paid", subtotal);
-            Console.WriteLine("{0,-15} : {1,10:c2}","You got back", charge);
-            Console.WriteLine();
-
+            
+            Console.WriteLine("Calculating dollar(s)");
+            Console.WriteLine("--------------------------------------------");
             for (int i = 0; i < denom.Length; i++)
             {
                 if (notes[i] > 0)
                 {
-                    Console.WriteLine("{0,-5} : {1,3}", denom[i], notes[i]);
+                    Console.WriteLine("{0,-5} : {1,3:C}", denom[i], notes[i]);
                 }
 
             }
+            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("\n");
+            Console.WriteLine("Information about your payment");
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("{0,-15} : {1,10:C}", "Total cost", subtotal);
+            Console.WriteLine("{0,-15} : {1,10:C}", "Total paid in", cash);
+            Console.WriteLine("{0,-15} : {1,10:C}", "You got back", charge);
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine();
             Console.WriteLine("\n");
             Console.WriteLine("Reciept will be downloaded in a few days.");
             Console.WriteLine("\n");
