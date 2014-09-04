@@ -50,6 +50,23 @@ namespace moneyexchange_v37
             }
             return startValue;
         }
+        // Skriver ut ett meddelande ifall om något är fel.
+        // Om ett meddelande har något fel så skriver den ut annars inte.
+        static private void ViewMessage(string message, bool isError = false)
+        {
+            if(isError)
+            {
+                Console.BackgroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine(message);
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.WriteLine(message);
+            }
+            Console.ResetColor();
+            return;
+        }
         private static uint ReadUint(string prompt, uint minValue)
         {
             uint input = 0;
