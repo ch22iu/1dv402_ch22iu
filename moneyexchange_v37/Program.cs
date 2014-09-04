@@ -12,7 +12,7 @@ namespace moneyexchange_v37
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(ReadPositiveDouble("Value: "));
         }
         private static double ReadPositiveDouble(string prompt = null)
         {
@@ -52,7 +52,20 @@ namespace moneyexchange_v37
         }
         private static uint ReadUint(string prompt, uint minValue)
         {
-            return (50);
+            uint input = 0;
+
+            while (input < minValue)
+            {
+                try
+                {
+
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Error, cant invalid amount!");
+                }
+            }
+            return input;
         }
     }
 }
