@@ -16,23 +16,23 @@ namespace moneyexchange_v37
             Console.WriteLine("Loading application...");
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Application 5% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 15% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 25% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 35% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 50% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 85% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 99% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 100% finish.");
-            System.Threading.Thread.Sleep(200);
-            Console.WriteLine("Reloading Interface...");
             System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 15% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 25% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 35% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 50% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 85% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 99% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Application 100% finish.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Reloading Interface...");
+            System.Threading.Thread.Sleep(2000);
             Console.Clear();
 
             ConsoleKeyInfo anyKey;
@@ -165,7 +165,7 @@ namespace moneyexchange_v37
             Console.WriteLine("{0,-15} : {1,10:C}", "Money back", charge);
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
-            
+            System.Threading.Thread.Sleep(3000);
             Console.WriteLine("Calculating dollar(s)");
             Console.WriteLine("--------------------------------------------");
             for (int i = 0; i < denom.Length; i++)
@@ -176,13 +176,14 @@ namespace moneyexchange_v37
                 }
 
             }
+            System.Threading.Thread.Sleep(3000);
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
             Console.WriteLine("Information about your payment");
             Console.WriteLine("-------------------------------");
-            Console.WriteLine("{0,-15:C} : {1,10}", "Total cost", subtotal);
-            Console.WriteLine("{0,-15:C} : {1,10}", "Total paid in", cash);
-            Console.WriteLine("{0,-15:C} : {1,10}", "You got back", charge);
+            Console.WriteLine("{0,-15:C} : {1,10:C}", "Total cost", subtotal);
+            Console.WriteLine("{0,-15:C} : {1,10:C}", "Total paid in", cash);
+            Console.WriteLine("{0,-15:C} : {1,10:C}", "You got back", charge);
             Console.WriteLine("-------------------------------");
             Console.WriteLine();
             Console.WriteLine("\n");
