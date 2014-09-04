@@ -28,16 +28,15 @@ namespace moneyexchange_v37
                 
                 total = Convert.ToUInt32(Math.Round(subtotal, 2
      ));
-                Console.WriteLine("\n");
                 cash = ReadUint("Total amount that you pay with:", total);
-                Console.WriteLine("\n");
+
                 charge = cash - total;
+
                 receiptsRoundOff = Math.Round(total - subtotal
     , 2);
                 addings = SplitIntoDenom(charge, denom);
                 
                 ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
-                Console.BackgroundColor = ConsoleColor.Magenta;
                 ViewMessage("Type Yes or press ESC for exit.");
                 Console.WriteLine("\n");
 
@@ -145,13 +144,14 @@ namespace moneyexchange_v37
         private static uint ReadUint(string prompt, uint minValue)
         {
             uint input = 0;
-
             while (input < minValue)
             {
 
                 try
                 {
+
                     Console.Write(prompt);
+                    Console.WriteLine();
                     input = uint.Parse(Console.ReadLine());
                     
                     if (input < minValue)
@@ -164,7 +164,6 @@ namespace moneyexchange_v37
                     ViewMessage("Error, This is not a valid number!", true);
                 }
             }
-            Console.WriteLine("\n");
             return (input);
         }
     }
