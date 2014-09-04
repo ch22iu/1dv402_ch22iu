@@ -25,18 +25,22 @@ namespace moneyexchange_v37
                 uint charge = 0;
 
                 subtotal = ReadPositiveDouble("Enter your total amount of money:");
+                
                 total = Convert.ToUInt32(Math.Round(subtotal, 2
      ));
+                Console.WriteLine("\n");
                 cash = ReadUint("Total amount that you pay with:", total);
+                Console.WriteLine("\n");
                 charge = cash - total;
                 receiptsRoundOff = Math.Round(total - subtotal
     , 2);
                 addings = SplitIntoDenom(charge, denom);
                 
                 ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
-                ViewMessage("Continue or press ESC for exit.");
+                Console.BackgroundColor = ConsoleColor.Magenta;
+                ViewMessage("Type Yes or press ESC for exit.");
                 Console.WriteLine("\n");
-                string ja = "ja";
+
                 anyKey = Console.ReadKey();
                 
             }
@@ -94,7 +98,7 @@ namespace moneyexchange_v37
             }
             else
             {
-                Console.BackgroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.WriteLine(message);
             }
             Console.ResetColor();
@@ -102,6 +106,7 @@ namespace moneyexchange_v37
         }
         static private void ViewReciept(double subtotal, double Amount, uint total, uint cash, uint charge, uint[] notes, uint[] denom)
         {
+            Console.Clear();
             Console.WriteLine("\n");
             Console.WriteLine("My Receipts");
             Console.WriteLine("--------------------------------------------");
@@ -112,6 +117,10 @@ namespace moneyexchange_v37
             Console.WriteLine("{0,-15} : {1,10:c2}", "Money back", charge);
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
+            Console.WriteLine("\n");
+            Console.WriteLine("You paid with", subtotal);
+            Console.WriteLine("You got back", charge);
+            Console.WriteLine();
 
             for (int i = 0; i < denom.Length; i++)
             {
@@ -121,7 +130,9 @@ namespace moneyexchange_v37
                 }
 
             }
-            Console.WriteLine("Reciept will be saved down to computer or send to email later.");
+            Console.WriteLine("\n");
+            Console.WriteLine("Reciept will be downloaded in a few days.");
+            Console.WriteLine("\n");
         }
         private static uint ReadUint(string prompt, uint minValue)
         {
@@ -129,10 +140,12 @@ namespace moneyexchange_v37
 
             while (input < minValue)
             {
+
                 try
                 {
                     Console.Write(prompt);
                     input = uint.Parse(Console.ReadLine());
+                    
                     if (input < minValue)
                         {
                             ViewMessage("Error, Number not in range!", true);
@@ -143,6 +156,7 @@ namespace moneyexchange_v37
                     ViewMessage("Error, This is not a valid number!", true);
                 }
             }
+            Console.WriteLine("\n");
             return (input);
         }
     }
