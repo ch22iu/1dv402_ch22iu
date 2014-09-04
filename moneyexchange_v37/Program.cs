@@ -46,7 +46,9 @@ namespace moneyexchange_v37
                 Console.Clear();
                 if ((anyKey.KeyChar == 'Y') || (anyKey.KeyChar == 'y'))
                 {
-                    Timer t = new Timer(Timer, null, 0, 2000);
+                    // Timer t = new Timer(Timer, null, 0, 2000);
+
+                    System.Threading.Thread.Sleep(2000);
 
                 }
                 else
@@ -57,15 +59,13 @@ namespace moneyexchange_v37
             }
             while (true);
         }
-        private static void Timer(Object o)
-        {
-            Console.WriteLine("Starting new recept for you...");
-            Console.WriteLine("Saving to database...");
-            Console.WriteLine("Clearing data for you.");
+       // private static void Timer(Object o)
+      //  {
+
             
-            GC.Collect();
+      //      GC.Collect();
             
-        }
+     //   }
         static private double ReadPositiveDouble(string prompt)
         {
             double input = 0;
