@@ -37,15 +37,25 @@ namespace moneyexchange_v37
 
                 receiptsRoundOff = Math.Round(total - subtotal
     , 2);
-                addings = SplitIntoDenom(charge, denom);
+                addings = SplitIntoDenom(
+                    charge, 
+                    denom);
                 
-                ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
+                ViewReciept(
+                    subtotal, 
+                    receiptsRoundOff, 
+                    total, 
+                    cash, 
+                    charge, 
+                    addings, 
+                    denom);
+
                 ViewMessage("Type y for create new (recipe), or press ESC for exit.");
+
                 Console.WriteLine("\n");
-
                 anyKey = Console.ReadKey();
-
                 Console.Clear();
+
                 if ((anyKey.KeyChar == 'Y') || (anyKey.KeyChar == 'y'))
                 {
                     // Timer t = new Timer(Timer, null, 0, 2000);
