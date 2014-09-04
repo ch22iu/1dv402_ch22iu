@@ -14,24 +14,26 @@ namespace moneyexchange_v37
         {
             ConsoleKeyInfo anyKey;
             uint[] denom = new uint[] { 500, 100, 50, 20, 10, 5, 1 };
-            uint[] myCal = new uint[denom.Length];
+            uint[] addings = new uint[denom.Length];
 
             do
             {
-                double myReceipts = 0;
+                double receiptsRoundOff = 0;
                 double subAmount = 0;
                 uint myMoney = 0;
                 uint total = 0;
                 uint charge = 0;
 
                 charge = myMoney - total;
-                myReceipts = Math.Round(total - subAmount
+                receiptsRoundOff = Math.Round(total - subAmount
                     , 2);
                 total = Convert.ToUInt16(Math.Round(subAmount, 2
                     ));
-                myCal = SplitIntoDenom(charge, denom);
+                addings = SplitIntoDenom(charge, denom);
+                subAmount = ReadPositiveDouble("Total:");
+                myMoney = ReadUint("My money:", total);
 
-                ViewMessage("Contiune");
+                ViewMessage("Continue or press ESC for exit.");
                 anyKey = Console.ReadKey();
         
             }
@@ -104,6 +106,27 @@ namespace moneyexchange_v37
             }
             Console.ResetColor();
             return;
+        }
+        static private void ViewReciept(double subtotal, double Amount, uint total, uint cash, uint charge, uint[] notes, uint[] denom)
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("My Receipts");
+            Console.WriteLine("---------------");
+            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
+            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
+            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
+            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
+            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
+            Console.WriteLine("\n");
+
+            for (int i = 0; i < denom.Length; i++)
+            {
+                if (notes[i] > 0)
+                {
+                    Console.WriteLine();
+                }
+
+            }
         }
         private static uint ReadUint(string prompt, uint minValue)
         {
