@@ -3,3 +3,4 @@ C:\Users\chorre\documents\visual studio 2013\Projects\moneyexchange_v37\moneyexc
 C:\Users\chorre\documents\visual studio 2013\Projects\moneyexchange_v37\moneyexchange_v37\bin\Debug\moneyexchange_v37.pdb
 C:\Users\chorre\documents\visual studio 2013\Projects\moneyexchange_v37\moneyexchange_v37\obj\Debug\moneyexchange_v37.exe
 C:\Users\chorre\documents\visual studio 2013\Projects\moneyexchange_v37\moneyexchange_v37\obj\Debug\moneyexchange_v37.pdb
+C:\Users\chorre\documents\visual studio 2013\Projects\moneyexchange_v37\moneyexchange_v37\obj\Debug\moneyexchange_v37.csprojResolveAssemblyReference.cache
