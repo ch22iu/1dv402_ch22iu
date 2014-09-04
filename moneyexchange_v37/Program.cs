@@ -48,8 +48,13 @@ namespace moneyexchange_v37
                 {
                     // Timer t = new Timer(Timer, null, 0, 2000);
 
+                    Console.WriteLine("Starting new recept for you.");
                     System.Threading.Thread.Sleep(2000);
-
+                    Console.WriteLine("Saving to database.");
+                    System.Threading.Thread.Sleep(2000);
+                    Console.WriteLine("Clearing data for you.");
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Clear();
                 }
                 else
                 {
