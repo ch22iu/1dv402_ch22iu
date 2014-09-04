@@ -18,8 +18,24 @@ namespace moneyexchange_v37
 
             do
             {
+                double myReceipts = 0;
+                double subAmount = 0;
+                uint myMoney = 0;
+                uint total = 0;
+                uint charge = 0;
 
+                charge = myMoney - total;
+                myReceipts = Math.Round(total - subAmount
+                    , 2);
+                total = Convert.ToUInt16(Math.Round(subAmount, 2
+                    ));
+                myCal = SplitIntoDenom(charge, denom);
+
+                ViewMessage("Contiune");
+                anyKey = Console.ReadKey();
+        
             }
+            while (anyKey.Key != ConsoleKey.Escape);
         }
         private static double ReadPositiveDouble(string prompt = null)
         {
