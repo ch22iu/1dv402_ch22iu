@@ -24,14 +24,10 @@ namespace moneyexchange_v37
                 uint total = 0;
                 uint charge = 0;
 
-                
-
-
-                
-                subtotal = ReadPositiveDouble("Total sum:");
+                subtotal = ReadPositiveDouble("Enter your total amount of money:");
                 total = Convert.ToUInt32(Math.Round(subtotal, 2
      ));
-                cash = ReadUint("My money:", total);
+                cash = ReadUint("Total amount that you pay with:", total);
                 charge = cash - total;
                 receiptsRoundOff = Math.Round(total - subtotal
     , 2);
@@ -39,8 +35,10 @@ namespace moneyexchange_v37
                 
                 ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
                 ViewMessage("Continue or press ESC for exit.");
+                Console.WriteLine("\n");
+                string ja = "ja";
                 anyKey = Console.ReadKey();
-        
+                
             }
             while (anyKey.Key != ConsoleKey.Escape);
         }
@@ -60,11 +58,13 @@ namespace moneyexchange_v37
                     if (values < 1)
                     {
                         ViewMessage("Error amount to small!", true);
+                        Console.WriteLine("\n");
                     }
                 }
                 catch (FormatException)
                 {
-                    ViewMessage("Error, No valid number", true);
+                    ViewMessage("Error, No valid number.", true);
+                    Console.WriteLine("\n");
                 }
             }
             return input;
@@ -105,11 +105,11 @@ namespace moneyexchange_v37
             Console.WriteLine("\n");
             Console.WriteLine("My Receipts");
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("{0,-15} : {1,10:c2}","Sub Total: ", subtotal);
-            Console.WriteLine("{0,-15} : {1,10:c2}","Amount:", Amount);
-            Console.WriteLine("{0,-15} : {1,10:c2}", "Total:", total);
-            Console.WriteLine("{0,-15} : {1,10:c2}", "Cash:", cash);
-            Console.WriteLine("{0,-15} : {1,10:c2}", "Of:", charge);
+            Console.WriteLine("{0,-15} : {1,10:c}","Total", subtotal);
+            Console.WriteLine("{0,-15} : {1,10:c2}","Amount", Amount);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "Total amount", total);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "Money paid in", cash);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "Money back", charge);
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
 
@@ -117,11 +117,11 @@ namespace moneyexchange_v37
             {
                 if (notes[i] > 0)
                 {
-                    Console.WriteLine("{0,-5} : {1,4}", denom[i], notes[i]);
+                    Console.WriteLine("{0,-5} : {1,3}", denom[i], notes[i]);
                 }
 
             }
-            Console.WriteLine("Cant save your recept atm.");
+            Console.WriteLine("Reciept will be saved down to computer or send to email later.");
         }
         private static uint ReadUint(string prompt, uint minValue)
         {
