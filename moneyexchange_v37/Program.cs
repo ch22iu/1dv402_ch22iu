@@ -24,14 +24,19 @@ namespace moneyexchange_v37
                 uint total = 0;
                 uint charge = 0;
 
+                
+
+
+                
+                subtotal = ReadPositiveDouble("Total sum:");
+                total = Convert.ToUInt32(Math.Round(subtotal, 2
+     ));
+                cash = ReadUint("My money:", total);
                 charge = cash - total;
                 receiptsRoundOff = Math.Round(total - subtotal
-                    , 2);
-                total = Convert.ToUInt16(Math.Round(subtotal, 2
-                    ));
+    , 2);
                 addings = SplitIntoDenom(charge, denom);
-                subtotal = ReadPositiveDouble("Total:");
-                cash = ReadUint("My money:", total);
+                
                 ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
                 ViewMessage("Continue or press ESC for exit.");
                 anyKey = Console.ReadKey();
@@ -39,50 +44,30 @@ namespace moneyexchange_v37
             }
             while (anyKey.Key != ConsoleKey.Escape);
         }
-        private static double ReadPositiveDouble(string prompt = null)
+        static private double ReadPositiveDouble(string prompt)
         {
-            double startValue = 0;
-            double startReading = 0;
-            while (startReading < 1)
+            double input = 0;
+            double values = 0;
+
+            while (values < 1)
             {
                 try
                 {
-                    // Skriver ut..
-                    if (prompt != null)
-                    {
-                        ViewMessage(prompt);
-                        startValue = double.Parse(Console.ReadLine());
-                        startReading = Math.Round(startValue);
+                    ViewMessage(prompt);
+                    input = double.Parse(Console.ReadLine());
+                    values = Math.Round(input);
 
-                        if (startReading < 1)
-                        {
-                            ViewMessage("Error amount to small!", true);
-                        }
-                        catch (FormatException)
-                    }
-                    startValue = 0;
-                    // Kollar upp och byter ut värde.
-                    if (Double.TryParse(Console.ReadLine().Replace('.', ','), out startValue))
+                    if (values < 1)
                     {
-                        double fixValue = Math.Round(startValue, MidpointRounding.AwayFromZero);
-                        if (fixValue > 0)
-                        {
-                            startReading = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Error! '{0}' to small value.", startValue);
-                            Console.ReadLine();
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error! Error!");
-                        Console.ReadLine();
+                        ViewMessage("Error amount to small!", true);
                     }
                 }
+                catch (FormatException)
+                {
+                    ViewMessage("Error, No valid number", true);
+                }
             }
-            return startValue;
+            return input;
         }
         // Själva den total summan som ska betalas.
         // Räknar ut varje "denom" som betalaren ska få tillbaka.
