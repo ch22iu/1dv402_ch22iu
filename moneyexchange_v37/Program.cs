@@ -8,7 +8,7 @@ using System.IO;
 
 namespace moneyexchange_v37
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -20,6 +20,7 @@ namespace moneyexchange_v37
             bool startReading = true;
             while (startReading)
             {
+
                 {
                     // Skriver ut..
                     if (prompt != null)
