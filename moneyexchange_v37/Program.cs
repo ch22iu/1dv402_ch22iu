@@ -12,7 +12,14 @@ namespace moneyexchange_v37
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(ReadPositiveDouble("Value: "));
+            ConsoleKeyInfo anyKey;
+            uint[] denom = new uint[] { 500, 100, 50, 20, 10, 5, 1 };
+            uint[] myCal = new uint[denom.Length];
+
+            do
+            {
+
+            }
         }
         private static double ReadPositiveDouble(string prompt = null)
         {
