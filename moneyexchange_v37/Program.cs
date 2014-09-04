@@ -24,7 +24,7 @@ namespace moneyexchange_v37
                 uint total = 0;
                 uint charge = 0;
 
-                subtotal = ReadPositiveDouble("Enter your total amount of money with decimal(s):");
+                subtotal = (double)ReadPositiveDouble("Enter your total amount of money with decimal(s):");
                 
                 total = Convert.ToUInt32(Math.Round(subtotal, 2
      ));
@@ -133,9 +133,9 @@ namespace moneyexchange_v37
             Console.WriteLine("\n");
             Console.WriteLine("Information about your payment");
             Console.WriteLine("-------------------------------");
-            Console.WriteLine("{0,-15} : {1,10:C}", "Total cost", subtotal);
-            Console.WriteLine("{0,-15} : {1,10:C}", "Total paid in", cash);
-            Console.WriteLine("{0,-15} : {1,10:C}", "You got back", charge);
+            Console.WriteLine("{0,-15:C} : {1,10}", "Total cost", subtotal);
+            Console.WriteLine("{0,-15:C} : {1,10}", "Total paid in", cash);
+            Console.WriteLine("{0,-15:C} : {1,10}", "You got back", charge);
             Console.WriteLine("-------------------------------");
             Console.WriteLine();
             Console.WriteLine("\n");
