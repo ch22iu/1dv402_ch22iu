@@ -24,7 +24,7 @@ namespace moneyexchange_v37
                 uint total = 0;
                 uint charge = 0;
 
-                subtotal = ReadPositiveDouble("Enter your total amount of money:");
+                subtotal = ReadPositiveDouble("Enter your total amount of money with decimal(s):");
                 
                 total = Convert.ToUInt32(Math.Round(subtotal, 2
      ));
@@ -111,15 +111,16 @@ namespace moneyexchange_v37
             Console.WriteLine("My Receipts");
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("{0,-15} : {1,10:c}","Total", subtotal);
-            Console.WriteLine("{0,-15} : {1,10:c2}","Amount", Amount);
-            Console.WriteLine("{0,-15} : {1,10:c2}", "Total amount", total);
             Console.WriteLine("{0,-15} : {1,10:c2}", "Money paid in", cash);
+            Console.WriteLine("{0,-15} : {1,10:c2}","Amount Rounding", Amount);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "New amount", total);
+
             Console.WriteLine("{0,-15} : {1,10:c2}", "Money back", charge);
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
             Console.WriteLine("\n");
-            Console.WriteLine("You paid with", subtotal);
-            Console.WriteLine("You got back", charge);
+            Console.WriteLine("{0,-15} : {1,10:c2}","You paid", subtotal);
+            Console.WriteLine("{0,-15} : {1,10:c2}","You got back", charge);
             Console.WriteLine();
 
             for (int i = 0; i < denom.Length; i++)
