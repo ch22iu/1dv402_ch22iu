@@ -50,6 +50,8 @@ namespace moneyexchange_v37
             }
             return startValue;
         }
+        // Själva den total summan som ska betalas.
+        // Räknar ut varje "denom" som betalaren ska få tillbaka.
         static private uint[] SplitIntoDenom(uint changeValue, uint[] denom)
         {
             uint myReceipts = 0;
@@ -58,10 +60,9 @@ namespace moneyexchange_v37
             {
                 myReceipts = changeValue / denom[i];
                 myDenom[i] = myReceipts;
-                changeValue = changeValue % denom[i]<
-
+                changeValue = changeValue % denom[i];
             }
-                return myReceipts
+            return (myDenom);
         }
         // Skriver ut ett meddelande ifall om något är fel.
         // Om ett meddelande har något fel så skriver den ut annars inte.
@@ -95,7 +96,7 @@ namespace moneyexchange_v37
                     Console.WriteLine("Error, cant invalid amount!");
                 }
             }
-            return input;
+            return (input);
         }
     }
 }
