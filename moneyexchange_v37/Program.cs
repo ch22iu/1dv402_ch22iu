@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.IO;
+using System.Threading;
 
 namespace moneyexchange_v37
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             ConsoleKeyInfo anyKey;
             uint[] denom = new uint[] { 500, 100, 50, 20, 10, 5, 1 };
@@ -37,13 +38,33 @@ namespace moneyexchange_v37
                 addings = SplitIntoDenom(charge, denom);
                 
                 ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
-                ViewMessage("Type Yes or press ESC for exit.");
+                ViewMessage("Type y for new recept, or press ESC for exit.");
                 Console.WriteLine("\n");
 
                 anyKey = Console.ReadKey();
+
+                Console.Clear();
+                if ((anyKey.KeyChar == 'Y') || (anyKey.KeyChar == 'y'))
+                {
+                    Timer t = new Timer(Timer, null, 0, 2000);
+
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
                 
             }
-            while (anyKey.Key != ConsoleKey.Escape);
+            while (true);
+        }
+        private static void Timer(Object o)
+        {
+            Console.WriteLine("Starting new recept for you...");
+            Console.WriteLine("Saving to database...");
+            Console.WriteLine("Clearing data for you.");
+            
+            GC.Collect();
+            
         }
         static private double ReadPositiveDouble(string prompt)
         {
