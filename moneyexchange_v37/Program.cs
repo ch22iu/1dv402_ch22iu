@@ -19,20 +19,20 @@ namespace moneyexchange_v37
             do
             {
                 double receiptsRoundOff = 0;
-                double subAmount = 0;
-                uint myMoney = 0;
+                double subtotal = 0;
+                uint cash = 0;
                 uint total = 0;
                 uint charge = 0;
 
-                charge = myMoney - total;
-                receiptsRoundOff = Math.Round(total - subAmount
+                charge = cash - total;
+                receiptsRoundOff = Math.Round(total - subtotal
                     , 2);
-                total = Convert.ToUInt16(Math.Round(subAmount, 2
+                total = Convert.ToUInt16(Math.Round(subtotal, 2
                     ));
                 addings = SplitIntoDenom(charge, denom);
-                subAmount = ReadPositiveDouble("Total:");
-                myMoney = ReadUint("My money:", total);
-
+                subtotal = ReadPositiveDouble("Total:");
+                cash = ReadUint("My money:", total);
+                ViewReciept(subtotal, receiptsRoundOff, total, cash, charge, addings, denom);
                 ViewMessage("Continue or press ESC for exit.");
                 anyKey = Console.ReadKey();
         
@@ -111,22 +111,24 @@ namespace moneyexchange_v37
         {
             Console.WriteLine("\n");
             Console.WriteLine("My Receipts");
-            Console.WriteLine("---------------");
-            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
-            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
-            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
-            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
-            Console.WriteLine("{0,-10} : {2,5:c5}", subtotal);
+            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("{0,-15} : {1,10:c2}","Sub Total: ", subtotal);
+            Console.WriteLine("{0,-15} : {1,10:c2}","Amount:", Amount);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "Total:", total);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "Cash:", cash);
+            Console.WriteLine("{0,-15} : {1,10:c2}", "Of:", charge);
+            Console.WriteLine("--------------------------------------------");
             Console.WriteLine("\n");
 
             for (int i = 0; i < denom.Length; i++)
             {
                 if (notes[i] > 0)
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("{0,-5} : {1,4}", denom[i], notes[i]);
                 }
 
             }
+            Console.WriteLine("Cant save your recept atm.");
         }
         private static uint ReadUint(string prompt, uint minValue)
         {
