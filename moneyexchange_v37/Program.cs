@@ -89,11 +89,16 @@ namespace moneyexchange_v37
             {
                 try
                 {
-
+                    Console.Write(prompt);
+                    input = uint.Parse(Console.ReadLine());
+                    if (input < minValue)
+                        {
+                            ViewMessage("Error, Number not in range!", true);
+                        }
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Error, cant invalid amount!");
+                    ViewMessage("Error, This is not a valid number!", true);
                 }
             }
             return (input);
