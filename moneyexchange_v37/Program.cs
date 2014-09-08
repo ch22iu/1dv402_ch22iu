@@ -242,7 +242,7 @@ namespace moneyexchange_v37
             Console.WriteLine("Information about your payment");
             Console.WriteLine("-------------------------------");
             Console.WriteLine("{0,-15:C} : {1,10:C}", "Total cost", subtotal);
-            Console.WriteLine("{0,-15:C} : {1,10:C}", "Total paid in", cash);
+            Console.WriteLine("{0,-15:C} : {1,10:C}", "Total paid", cash);
             Console.WriteLine("{0,-15:C} : {1,10:C}", "You receive", charge);
             Console.WriteLine("-------------------------------");
             Console.WriteLine();
