@@ -31,6 +31,7 @@ namespace moneyexchange_v37
                 
                 total = Convert.ToUInt32(Math.Round(subtotal, 2
      ));
+
                 cash = ReadUint("Total amount that you pay with:", total);
 
                 charge = cash - total;
