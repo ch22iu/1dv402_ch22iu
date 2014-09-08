@@ -10,3 +10,9 @@ P:\LP1\C#\Vecka 36\moneyexchange_v37\obj\Debug\moneyexchange_v37.pdb
 P:\LP1\C#\Vecka 36\moneyexchange_v37\bin\Debug\moneyexchange_v37.exe
 P:\LP1\C#\Vecka 36\moneyexchange_v37\bin\Debug\moneyexchange_v37.pdb
 P:\LP1\C#\Vecka 36\moneyexchange_v37\obj\Debug\moneyexchange_v37.csprojResolveAssemblyReference.cache
+P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\bin\Debug\moneyexchange_v37.exe.config
+P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.exe
+P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.pdb
+P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\bin\Debug\moneyexchange_v37.exe
+P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\bin\Debug\moneyexchange_v37.pdb
+P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.csprojResolveAssemblyReference.cache

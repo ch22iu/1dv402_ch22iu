@@ -174,7 +174,7 @@ namespace moneyexchange_v37
                 }
                 catch (FormatException)
                 {
-                    ViewMessage("Error, No valid number.", true);
+                    ViewMessage("Error, Try to put , instead of .", true);
                     Console.WriteLine("\n");
                 }
             }
@@ -243,7 +243,7 @@ namespace moneyexchange_v37
             Console.WriteLine("-------------------------------");
             Console.WriteLine("{0,-15:C} : {1,10:C}", "Total cost", subtotal);
             Console.WriteLine("{0,-15:C} : {1,10:C}", "Total paid in", cash);
-            Console.WriteLine("{0,-15:C} : {1,10:C}", "You got back", charge);
+            Console.WriteLine("{0,-15:C} : {1,10:C}", "You receive", charge);
             Console.WriteLine("-------------------------------");
             Console.WriteLine();
             Console.WriteLine("\n");
