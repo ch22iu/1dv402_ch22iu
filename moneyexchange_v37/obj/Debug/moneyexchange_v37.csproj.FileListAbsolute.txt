@@ -16,3 +16,6 @@ P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.p
 P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\bin\Debug\moneyexchange_v37.exe
 P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\bin\Debug\moneyexchange_v37.pdb
 P:\LP1\C#\Vecka 37\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.csprojResolveAssemblyReference.cache
+C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\moneyexchange_v37\bin\Debug\moneyexchange_v37.exe.config
+C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.exe
+C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\moneyexchange_v37\obj\Debug\moneyexchange_v37.pdb

@@ -14,7 +14,7 @@ namespace moneyexchange_v37
         public static void Main(string[] args)
         {
             loadingContent();
-
+            // Test commit
             ConsoleKeyInfo anyKey;
             uint[] denom = new uint[] { 500, 100, 50, 20, 10, 5, 1 };
             uint[] addings = new uint[denom.Length];
