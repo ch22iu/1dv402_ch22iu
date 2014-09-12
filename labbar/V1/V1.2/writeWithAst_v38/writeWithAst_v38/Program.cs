@@ -15,15 +15,16 @@ namespace writeWithAst_v38
 
             do
             {
-
-            } while();
+                columns = ReadOddByte(Strings.Start_Message + max + ": ", max)
+                RenderAwesomeDaimond(columns);
+            } while(IsContinuing());
 
         }
         private static byte ReadOddByte(string prompt = null, byte maxValue = max)
         {
             return;
         }
-        private static void Render(byte maxCount)
+        private static void RenderAwesomeDaimond(byte maxCount)
         {
 
         }
