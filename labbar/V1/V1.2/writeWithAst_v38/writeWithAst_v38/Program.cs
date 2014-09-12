@@ -32,7 +32,7 @@ namespace writeWithAst_v38
                 try
                 {
                     columns = byte.Parse(input);
-                    if (columns % 2 != 1 && columns <= maxValue)
+                    if (columns % 2 != 0 && columns <= maxValue)
                     {
                         ifSuccess = true;
                         break;
@@ -72,7 +72,7 @@ namespace writeWithAst_v38
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         aCount = aCount + 2;
                         sCount = sCount - 1;
-                        if (aCount == (maxCount +2))
+                        if (aCount == (maxCount + 2))
                         {
                             testing = true;
                             aCount = aCount - 2;
