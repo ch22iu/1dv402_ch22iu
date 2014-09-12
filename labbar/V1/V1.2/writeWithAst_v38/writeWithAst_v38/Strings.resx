@@ -126,6 +126,9 @@
   <data name="Error_Message" xml:space="preserve">
     <value>ERROR! Input value wrong! Try another number between  1 and {0}.</value>
   </data>
+  <data name="Error_Message_Text" xml:space="preserve">
+    <value>ERROR! Cant handle text type a number instead!!!</value>
+  </data>
   <data name="Start_Message" xml:space="preserve">
     <value>Welcome! Type anykey between 1 - 79 max is </value>
   </data>

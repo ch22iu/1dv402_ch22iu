@@ -88,6 +88,15 @@ namespace writeWithAst_v38 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ERROR! Cant handle text type a number instead!!!.
+        /// </summary>
+        internal static string Error_Message_Text {
+            get {
+                return ResourceManager.GetString("Error_Message_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome! Type anykey between 1 - 79 max is .
         /// </summary>
         internal static string Start_Message {

@@ -8,10 +8,12 @@ namespace writeWithAst_v38
 {
     class Program
     {
+        // Fixes
         private const byte max = 0;
+        // Fixes
         static void Main(string[] args)
         {
-            loadingContent(error, error, error);
+            loadingContent();
 
 
             byte columns = 0;
@@ -91,7 +93,9 @@ namespace writeWithAst_v38
         private static byte ReadOddByte(string prompt = null, byte maxValue = max)
         {
             byte columns = 0;
+            // Fixes
             bool ifSuccess = true;
+            // Fixes
             while (!ifSuccess)
             {
                 
@@ -100,7 +104,9 @@ namespace writeWithAst_v38
                 try
                 {
                     columns = byte.Parse(input);
+                    // Fixes
                     if (columns % 2 != 1 && columns <= maxValue)
+                    // Fixes
                     {
                         ifSuccess = true;
                         break;
@@ -113,12 +119,13 @@ namespace writeWithAst_v38
                         Console.WriteLine(Strings.Error_Message, maxValue);
                         Console.ResetColor();
                     }
+
                 }
                 catch
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(Strings.Error_Message, maxValue);
+                    Console.WriteLine(Strings.Error_Message_Text, maxValue);
                     Console.ResetColor();
                 }
             }
