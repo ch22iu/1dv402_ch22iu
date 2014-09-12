@@ -9,7 +9,7 @@ namespace writeWithAst_v38
     class Program
     {
         // Fixes
-        private const byte max = 79;
+        private const byte max = 0;
         // Fixes
         static void Main(string[] args)
         {
@@ -40,7 +40,7 @@ namespace writeWithAst_v38
         {
             byte columns = 0;
             // Fixes
-            bool ifSuccess = false;
+            bool ifSuccess = true;
             // Fixes
             while (!ifSuccess)
             {
@@ -51,7 +51,7 @@ namespace writeWithAst_v38
                 {
                     columns = byte.Parse(input);
                     // Fixes
-                    if (columns % 2 != 0 && columns <= maxValue)
+                    if (columns % 2 != 1 && columns <= maxValue)
                     // Fixes
                     {
                         ifSuccess = true;
