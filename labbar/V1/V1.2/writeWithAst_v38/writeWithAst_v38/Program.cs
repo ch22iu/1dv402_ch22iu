@@ -58,6 +58,28 @@ namespace writeWithAst_v38
         }
         private static void RenderAwesomeDaimond(byte maxCount)
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            int aCount = 1;
+            int sCount = maxCount / 2;
+            bool testing = false;
+            while (aCount != 0)
+            {
+                for (int i = 0; i < maxCount; i++)
+                {
+                    rows(sCount, aCount);
+                    if (testing == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        aCount = aCount + 2;
+                        sCount = sCount - 1;
+                        if (aCount == (maxCount +2))
+                        {
+
+                        }
+                    }
+
+                }
+            }
 
         }
         static void rows(int maxCount, int aCount)
