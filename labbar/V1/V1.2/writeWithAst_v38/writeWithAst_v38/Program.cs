@@ -26,6 +26,7 @@ namespace writeWithAst_v38
             bool ifSuccess = false;
             while (!ifSuccess)
             {
+                
                 Console.Write(prompt);
                 string input = Console.ReadLine();
                 try
