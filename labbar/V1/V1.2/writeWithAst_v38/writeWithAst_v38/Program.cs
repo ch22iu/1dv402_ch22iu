@@ -31,5 +31,16 @@ namespace writeWithAst_v38
         {
 
         }
+        static bool IsContinuing()
+        {
+            if(Console.ReadKey(true).Key != ConsoleKey.Escape)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
