@@ -74,8 +74,24 @@ namespace writeWithAst_v38
                         sCount = sCount - 1;
                         if (aCount == (maxCount +2))
                         {
-
+                            testing = true;
+                            aCount = aCount - 2;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            sCount = sCount + 1;
                         }
+                    }
+                    if (testing == true)
+                    {
+                        if (aCount != 1)
+                        {
+                            aCount = aCount - 2;
+                        }
+                        else
+                        {
+                            aCount = aCount - 1;
+                            break;
+                        }
+                        sCount = sCount + 1;
                     }
 
                 }
