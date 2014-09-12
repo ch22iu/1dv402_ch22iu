@@ -15,14 +15,16 @@ namespace writeWithAst_v38
 
             do
             {
-                columns = ReadOddByte(Strings.Start_Message + max + ": ", max)
+                columns = ReadOddByte(Strings.Start_Message + max + ": ", max);
                 RenderAwesomeDaimond(columns);
             } while(IsContinuing());
 
         }
         private static byte ReadOddByte(string prompt = null, byte maxValue = max)
         {
-            return;
+            byte columns = 0;
+
+            return columns;
         }
         private static void RenderAwesomeDaimond(byte maxCount)
         {
@@ -30,7 +32,18 @@ namespace writeWithAst_v38
         }
         static void rows(int maxCount, int aCount)
         {
-
+            for (int i = 0; i < maxCount; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.Write(" ");
+            }
+            for (int x = 0; x < aCount; x++)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.Write("*");
+            }
+            Console.WriteLine();
+            Console.BackgroundColor = ConsoleColor.Red;
         }
         static bool IsContinuing()
         {
