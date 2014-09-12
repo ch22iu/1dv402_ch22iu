@@ -8,6 +8,7 @@ namespace writeWithAst_v38
 {
     class Program
     {
+        private const byte max = 79;
         static void Main(string[] args)
         {
 
