@@ -9,7 +9,7 @@ namespace writeWithAst_v38
     class Program
     {
         // Fixes
-        private const byte max = 0;
+        private const byte max = 79;
         // Fixes
         static void Main(string[] args)
         {
@@ -20,72 +20,18 @@ namespace writeWithAst_v38
 
             do
             {
-                columns = ReadOddByte(Strings.Start_Message + max + ": ", max);
+                columns = ReadOddByte(Strings.Start_Message + max + Strings.Colon, max);
                 RenderAwesomeDaimond(columns);
             } while(IsContinuing());
 
         }
         private static void loadingContent()
         {
-            Console.WriteLine("Loading application...");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 5% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 10% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 15% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 20% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 25% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 30% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 35% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 40% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 45% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 50% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 55% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 60% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 65% finish.");
-            System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Application 75% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 80% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 85% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 90% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 91% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 92% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 93% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 94% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 95% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 96% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 97% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 98% finish.");
-            System.Threading.Thread.Sleep(50);
-            Console.WriteLine("Application 99% finish.");
-            System.Threading.Thread.Sleep(600);
-            Console.WriteLine("Application 100% finish.");
+            Console.WriteLine(Strings.Application_load);
             System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("\n");
-            Console.WriteLine("Reloading Interface...");
-            Console.WriteLine("\n");
+            Console.WriteLine();
+            Console.WriteLine(Strings.Application_reload);
+            Console.WriteLine();
             System.Threading.Thread.Sleep(2000);
 
             Console.Clear();
@@ -94,7 +40,7 @@ namespace writeWithAst_v38
         {
             byte columns = 0;
             // Fixes
-            bool ifSuccess = true;
+            bool ifSuccess = false;
             // Fixes
             while (!ifSuccess)
             {
@@ -105,7 +51,7 @@ namespace writeWithAst_v38
                 {
                     columns = byte.Parse(input);
                     // Fixes
-                    if (columns % 2 != 1 && columns <= maxValue)
+                    if (columns % 2 != 0 && columns <= maxValue)
                     // Fixes
                     {
                         ifSuccess = true;
@@ -177,28 +123,35 @@ namespace writeWithAst_v38
         {
             for (int i = 0; i < maxCount; i++)
             {
-                Console.Write(" ");
+                Console.Write(Strings.Empty);
             }
             for (int x = 0; x < aCount; x++)
             {
-                Console.Write("*");
+                Console.Write(Strings.Dot);
             }
             Console.WriteLine();
             Console.BackgroundColor = ConsoleColor.Black;
         }
         static bool IsContinuing()
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.BackgroundColor = ConsoleColor.Green;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(Strings.Correct_Message);
             Console.ResetColor();
             Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(Strings.Continue_Prompt);
+            
             if(Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
+                Console.Clear();
                 return true;
             }
             else
             {
+                
                 return false;
             }
         }

@@ -61,6 +61,33 @@ namespace writeWithAst_v38 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application starting....
+        /// </summary>
+        internal static string Application_load {
+            get {
+                return ResourceManager.GetString("Application_load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reloading Interface....
+        /// </summary>
+        internal static string Application_reload {
+            get {
+                return ResourceManager.GetString("Application_reload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to : .
+        /// </summary>
+        internal static string Colon {
+            get {
+                return ResourceManager.GetString("Colon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press anykey to continue - ESC to exit..
         /// </summary>
         internal static string Continue_Prompt {
@@ -75,6 +102,24 @@ namespace writeWithAst_v38 {
         internal static string Correct_Message {
             get {
                 return ResourceManager.GetString("Correct_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *.
+        /// </summary>
+        internal static string Dot {
+            get {
+                return ResourceManager.GetString("Dot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  .
+        /// </summary>
+        internal static string Empty {
+            get {
+                return ResourceManager.GetString("Empty", resourceCulture);
             }
         }
         
