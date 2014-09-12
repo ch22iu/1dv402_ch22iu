@@ -76,6 +76,11 @@ namespace writeWithAst_v38
         }
         static bool IsContinuing()
         {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(Strings.Correct_Message);
+            Console.ResetColor();
+            Console.WriteLine();
             if(Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
                 return true;

@@ -70,7 +70,16 @@ namespace writeWithAst_v38 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ERROR! Input value wrong need to be between 1 and {0}..
+        ///   Looks up a localized string similar to You typed a correct number!!.
+        /// </summary>
+        internal static string Correct_Message {
+            get {
+                return ResourceManager.GetString("Correct_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERROR! Input value wrong! Try another number between  1 and {0}..
         /// </summary>
         internal static string Error_Message {
             get {
