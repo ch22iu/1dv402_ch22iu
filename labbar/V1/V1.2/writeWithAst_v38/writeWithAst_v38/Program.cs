@@ -39,12 +39,18 @@ namespace writeWithAst_v38
 
                     else
                     {
-
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine(Strings.Error_Message, maxValue);
+                        Console.ResetColor();
                     }
                 }
                 catch
                 {
-
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(Strings.Error_Message, maxValue);
+                    Console.ResetColor();
                 }
             }
             return columns;
