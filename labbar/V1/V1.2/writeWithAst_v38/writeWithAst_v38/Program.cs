@@ -23,7 +23,30 @@ namespace writeWithAst_v38
         private static byte ReadOddByte(string prompt = null, byte maxValue = max)
         {
             byte columns = 0;
+            bool ifSuccess = false;
+            while (!ifSuccess)
+            {
+                Console.Write(prompt);
+                string input = Console.ReadLine();
+                try
+                {
+                    columns = byte.Parse(input);
+                    if (columns % 2 != 1 && columns <= maxValue)
+                    {
+                        ifSuccess = true;
+                        break;
+                    }
 
+                    else
+                    {
+
+                    }
+                }
+                catch
+                {
+
+                }
+            }
             return columns;
         }
         private static void RenderAwesomeDaimond(byte maxCount)
