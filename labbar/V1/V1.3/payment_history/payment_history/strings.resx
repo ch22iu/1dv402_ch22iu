@@ -120,8 +120,14 @@
   <data name="isError" xml:space="preserve">
     <value>"Press any key for new calculation. ESC quit"</value>
   </data>
+  <data name="mySalaries" xml:space="preserve">
+    <value>"My salaries: {0,7}"</value>
+  </data>
   <data name="salaries" xml:space="preserve">
     <value>"Your salery: "</value>
+  </data>
+  <data name="toHigh" xml:space="preserve">
+    <value>"ERROR! '{0}' to high value."</value>
   </data>
   <data name="valueError" xml:space="preserve">
     <value>"Input cannot be found."</value>

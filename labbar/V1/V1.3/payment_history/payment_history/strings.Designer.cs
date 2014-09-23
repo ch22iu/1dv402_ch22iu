@@ -70,11 +70,29 @@ namespace payment_history {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;My salaries: {0,7}&quot;.
+        /// </summary>
+        internal static string mySalaries {
+            get {
+                return ResourceManager.GetString("mySalaries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;Your salery: &quot;.
         /// </summary>
         internal static string salaries {
             get {
                 return ResourceManager.GetString("salaries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;ERROR! &apos;{0}&apos; to high value.&quot;.
+        /// </summary>
+        internal static string toHigh {
+            get {
+                return ResourceManager.GetString("toHigh", resourceCulture);
             }
         }
         

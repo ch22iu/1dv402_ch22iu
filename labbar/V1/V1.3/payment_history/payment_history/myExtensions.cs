@@ -12,7 +12,7 @@ namespace payment_history
         {
             return source.Max() - source.Min();
         }
-        public static Median(this int[] source)
+        public static int Median(this int[] source)
         {
             List<int> values = new List<int>(source);
             values.Sort();
