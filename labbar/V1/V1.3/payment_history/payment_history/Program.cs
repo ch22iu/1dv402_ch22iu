@@ -12,24 +12,24 @@ namespace payment_history
         {
         }
         private static int ReadInt(string prompt)
-        { 
-        
+        {
+            return 0;
         }
         private static int ReadInt(string prompt)
         {
-
+            return 0;
         }
         private static int ReadInt(string prompt)
         {
-
+            return 0;
         }
         private static int ReadInt(string prompt)
         {
-
+            return 0;
         }
         private static int ReadInt(string prompt)
         {
-
+            return 0;
         }
     }
 }
