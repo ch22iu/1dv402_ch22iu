@@ -22,7 +22,8 @@ namespace guess_the_secret_throw
                 while (secretNumber.CanMakeGuess)
                 {
                     Console.Clear();
-
+                    Console.BackgroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("========================================");
                     Console.WriteLine("| Guess the secret word between 1 - 100 |");
                     Console.WriteLine("========================================");
