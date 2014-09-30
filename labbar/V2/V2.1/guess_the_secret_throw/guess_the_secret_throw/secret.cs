@@ -55,15 +55,24 @@ namespace guess_the_secret_throw
         }
 
         // Creating up some methods
+        public void Initialize()
+        {
+            for (int i = 0; i < _guessedNumbers.Length; i++)
+            {
+                _guessedNumbers[i].myGuess = null;
+                _guessedNumbers[i].Outcome = Outcome.Indefinite;
+            }
+        }
 
         public SecretNumber() 
         {
-        
+            _guessedNumbers = new GuessedNumber[MaxNumber];
+            Initialize();
         }
 
         public void Initialize() 
         {
-        
+            
         }
 
         public Outcome MakeGuess(int guess)
