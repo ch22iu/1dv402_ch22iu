@@ -38,8 +38,8 @@ namespace guess_the_secret_throw
             get;
             private set;
         }
-        
-        public int? Number 
+
+        public int? Number
         {
             get
             {
@@ -59,8 +59,8 @@ namespace guess_the_secret_throw
         public GuessedNumber[] GuessedNumbers
         {
             get
-            { 
-                return (GuessedNumber[]) _guessedNumbers.Clone();
+            {
+                return (GuessedNumber[])_guessedNumbers.Clone();
             }
         }
 
@@ -73,7 +73,7 @@ namespace guess_the_secret_throw
                 _guessedNumbers[i].Outcome = Outcome.Indefinite;
             }
             Random r = new Random();
-            
+
             Number = r.Next(1, 101);
 
             Count = 0;
@@ -81,7 +81,7 @@ namespace guess_the_secret_throw
             Outcome = Outcome.Indefinite;
         }
 
-        public SecretNumber() 
+        public SecretNumber()
         {
             _guessedNumbers = new GuessedNumber[MaxNumber];
             Initialize();
@@ -96,7 +96,7 @@ namespace guess_the_secret_throw
 
             Guess = guess;
 
-            foreach (GuessedNumber i in _guessedNumbers) 
+            foreach (GuessedNumber i in _guessedNumbers)
             {
                 if (i.Number == Guess)
                 {
@@ -114,10 +114,12 @@ namespace guess_the_secret_throw
             if (Guess < _number)
             {
                 Outcome = Outcome.Low;
-            } else if (Guess > _number)
+            }
+            else if (Guess > _number)
             {
-                Outcome = Outcome.High;   
-            } else
+                Outcome = Outcome.High;
+            }
+            else
             {
                 Outcome = Outcome.Right;
                 return Outcome;
@@ -132,19 +134,18 @@ namespace guess_the_secret_throw
 
         }
 
-        }
     }
-    
+
 
     // Specify list
     public enum Outcome
-    { 
+    {
         Indefinite,
         Low,
         High,
         Right,
         NoMoreGuesses,
         OldGuess
-    }
 
+    }
 }
