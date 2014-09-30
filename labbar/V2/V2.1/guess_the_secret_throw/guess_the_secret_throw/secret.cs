@@ -81,6 +81,11 @@ namespace guess_the_secret_throw
             }
             Random r = new Random();
             
+            Number = r.Next(1, 101);
+
+            Count = 0;
+            Guess = null;
+            Outcome = Outcome.Indefinite;
         }
 
         public SecretNumber() 
