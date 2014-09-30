@@ -9,12 +9,19 @@ namespace guess_the_secret_throw
     {
         static void Main(string[] args)
         {
-            secret throwing = new secret();
-            throwing.Throw();
+            Test.Run();
 
-            Console.WriteLine(throwing._faceValue);
-            Console.WriteLine("Throwing... Throw!!! ");
-            Console.ReadLine();
+            bool continue = false;
+            int number = 0;
+            string message = null;
+            secret secretNumber = new secret();
+
+            do
+            {
+                secret.Initialize();
+
+                while (secret.)
+            }
         }
     }
 }
