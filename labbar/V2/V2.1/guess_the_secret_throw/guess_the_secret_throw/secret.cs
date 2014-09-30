@@ -75,7 +75,7 @@ namespace guess_the_secret_throw
 
         public Outcome MakeGuess(int guess)
         {
-            if (guess > 100 || guess < 1)
+            if (guess > 101 || guess <= 0)
             {
                 throw new ArgumentOutOfRangeException("Guess need to be in range between 1 and 100");
             }
