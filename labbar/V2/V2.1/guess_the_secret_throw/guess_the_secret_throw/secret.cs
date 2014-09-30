@@ -19,22 +19,7 @@ namespace guess_the_secret_throw
         private my_Guessed_Number[] _guessedNumbers;
         private int? _number;
 
-        public bool MakeGuess
-        {
-            get
-            { 
-                return Outcome != Outcome.NoMoreGuesses && Outcome.Right;
-            }
-        }
 
-        // Clone = It clones the number that i typed in and holds it there. Really awesome!
-        public GuessedNumber[] GuessedNumbers
-        {
-            get
-            { 
-                return GuessedNumber[]) _guessedNumbers.Clone();
-            }
-        }
         public bool CanMakeGuess
         {
             get
@@ -67,6 +52,15 @@ namespace guess_the_secret_throw
             private set
             {
                 _number = value;
+            }
+        }
+
+        // Clone = It clones the number that i typed in and holds it there. Really awesome!
+        public GuessedNumber[] GuessedNumbers
+        {
+            get
+            { 
+                return (GuessedNumber[]) _guessedNumbers.Clone();
             }
         }
 
