@@ -9,7 +9,6 @@ namespace guess_the_secret_throw
     {
         static void Main(string[] args)
         {
-            Test.Run();
 
             bool repeat = false;
             int number = 0;
@@ -29,7 +28,7 @@ namespace guess_the_secret_throw
                     if (secretNumber.Count > 0)
                     {
                         GuessedNumber[] results = secretNumber.GuessedNumbers;
-                        for (int i = 0;i < secretNumber.Count; i++)
+                        for (int i = 0; i < secretNumber.Count; i++)
                         {
                             Console.Write(" {0} ", results[i].Number);
                         }
@@ -46,7 +45,7 @@ namespace guess_the_secret_throw
                     {
                         Console.Write(prompt);
 
-                    } while(!(int.TryParse(Console.ReadLine(), out number) && number >= 1 && number <= 100));
+                    } while (!(int.TryParse(Console.ReadLine(), out number) && number >= 1 && number <= 100));
 
                     try
                     {
@@ -67,9 +66,8 @@ namespace guess_the_secret_throw
                         Console.WriteLine(exception.Message);
                         return;
                     }
-
                 }
-            }
+            } while (repeat);
         }
     }
 }
