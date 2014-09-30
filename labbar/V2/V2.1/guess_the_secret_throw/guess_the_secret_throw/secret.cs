@@ -9,13 +9,6 @@ namespace guess_the_secret_throw
     {
         public int _faceValue;
 
-        public int Throw()
-        {
-            Random mRandom = new Random();
-            _faceValue = mRandom.Next(1, 7);
-
-            return _faceValue;
-        }
 
     }
 
@@ -75,9 +68,9 @@ namespace guess_the_secret_throw
 
         public Outcome MakeGuess(int guess)
         {
-            if (guess > 101 || guess <= 0)
+            if (guess > 100 || guess < 1)
             {
-                throw new ArgumentOutOfRangeException("Guess need to be in range between 1 and 100");
+                throw new ArgumentOutOfRangeException("Guess need to be in range between 1 and 100.");
             }
 
 
