@@ -21,6 +21,8 @@ namespace guess_the_secret_throw
 
                 while (secretNumber.CanMakeGuess)
                 {
+                    Console.Clear();
+
                     Console.WriteLine("========================================");
                     Console.WriteLine("| Guess the secret word between 1 - 100 |");
                     Console.WriteLine("========================================");
@@ -30,8 +32,12 @@ namespace guess_the_secret_throw
                         GuessedNumber[] results = secretNumber.GuessedNumbers;
                         for (int i = 0; i < secretNumber.Count; i++)
                         {
+                            Console.BackgroundColor = results[i].Outcome == Outcome.High ?
+                                ConsoleColor.Red : ConsoleColor.Blue;
                             Console.Write(" {0} ", results[i].Number);
                         }
+                        Console.ResetColor();
+                        Console.WriteLine("\n");
 
                     }
                     if (!String.IsNullOrWhiteSpace(message))
@@ -40,12 +46,15 @@ namespace guess_the_secret_throw
                         Console.WriteLine();
                     }
 
-                    var prompt = String.Format(String.Format(Strings.Guess_Number, Strings.ResourceManager.GetString(String.Format("Count_{0}", secretNumber.Count + 1))));
+                    var prompt = String.Format(Strings.Guess_Number,
+                        Strings.ResourceManager.GetString(String.Format("Count_{0}", secretNumber.Count + 1)));
+
                     do
                     {
                         Console.Write(prompt);
 
                     } while (!(int.TryParse(Console.ReadLine(), out number) && number >= 1 && number <= 100));
+                    Console.ResetColor();
 
                     try
                     {
@@ -59,6 +68,11 @@ namespace guess_the_secret_throw
                             message = String.Format(Strings.Outcome_Right_Message,
                                 Strings.ResourceManager.GetString(String.Format("Count_{0}", secretNumber.Count)).ToLower());
                         }
+                        if (!secretNumber.CanMakeGuess && secretNumber.Outcome != Outcome.Right)
+                        {
+                            message += String.Format(Strings.Cannot_Guess, secretNumber.Number);
+                            break;
+                        }
                     }
                     catch (Exception exception)
                     {
@@ -67,6 +81,11 @@ namespace guess_the_secret_throw
                         return;
                     }
                 }
+
+                Console.WriteLine();
+                Console.WriteLine(message);
+                Console.Write("\n  New Number? [N] Quit");
+                repeat = Console.ReadKey(true).Key != ConsoleKey.N;
             } while (repeat);
         }
     }

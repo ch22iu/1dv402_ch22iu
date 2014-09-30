@@ -61,6 +61,15 @@ namespace guess_the_secret_throw {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WTF.
+        /// </summary>
+        internal static string Cannot_Guess {
+            get {
+                return ResourceManager.GetString("Cannot_Guess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Ex {
