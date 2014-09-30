@@ -5,13 +5,6 @@ using System.Text;
 
 namespace guess_the_secret_throw
 {
-    public class secret
-    {
-        public int _faceValue;
-
-
-    }
-
     public class SecretNumber
     {
         public const int MaxNumber = 7;
@@ -101,11 +94,43 @@ namespace guess_the_secret_throw
                 throw new ArgumentOutOfRangeException("Guess need to be in range between 1 and 100.");
             }
 
-
             Guess = guess;
 
+            foreach (GuessedNumber i in _guessedNumbers) 
+            {
+                if (i.Number == Guess)
+                {
+                    Outcome = Outcome.OldGuess;
+                    return Outcome.OldGuess;
+                }
+            }
+            if (Count >= MaxNumber - 1)
+            {
+                Count = MaxNumber;
+                Outcome = Outcome.NoMoreGuesses;
+                return Outcome;
+            }
+
+            if (Guess < _number)
+            {
+                Outcome = Outcome.Low;
+            } else if (Guess > _number)
+            {
+                Outcome = Outcome.High;   
+            } else
+            {
+                Outcome = Outcome.Right;
+                return Outcome;
+            }
+
+            _guessedNumbers[Count].Number = Guess;
+            _guessedNumbers[Count].Outcome = Outcome;
+
+            Count++;
+
+            return Outcome;
+
         }
-        return Outcome;
 
         }
     }
