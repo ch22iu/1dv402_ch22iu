@@ -9,7 +9,11 @@ namespace guess_the_secret_throw
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test! ");
+            secret throwing = new secret();
+            throwing.Throw();
+
+            Console.WriteLine(throwing._faceValue);
+            Console.WriteLine("Throwing... Throw!!! ");
             Console.ReadLine();
         }
     }
