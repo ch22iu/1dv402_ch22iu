@@ -53,6 +53,22 @@ namespace guess_the_secret_throw
             get;
             private set;
         }
+        
+        public int? Number 
+        {
+            get
+            {
+                if (CanMakeGuess)
+                {
+                    return null;
+                }
+                return _number;
+            }
+            private set
+            {
+                _number = value;
+            }
+        }
 
         // Creating up some methods
         public void Initialize()
@@ -62,17 +78,14 @@ namespace guess_the_secret_throw
                 _guessedNumbers[i].myGuess = null;
                 _guessedNumbers[i].Outcome = Outcome.Indefinite;
             }
+            Random r = new Random();
+            
         }
 
         public SecretNumber() 
         {
             _guessedNumbers = new GuessedNumber[MaxNumber];
             Initialize();
-        }
-
-        public void Initialize() 
-        {
-            
         }
 
         public Outcome MakeGuess(int guess)
