@@ -16,7 +16,7 @@ namespace guess_the_secret_throw
     {
         public const int MaxNumber = 7;
 
-        private my_Guessed_Number[] _guessedNumbers;
+        private GuessedNumber[] _guessedNumbers;
         private int? _number;
 
 
@@ -27,6 +27,13 @@ namespace guess_the_secret_throw
                 return Outcome != Outcome.NoMoreGuesses && Outcome != Outcome.Right;
             }
         }
+
+        public Outcome Outcome
+        {
+            get;
+            private set;
+        }
+
         public int Count
         {
             get;
@@ -69,7 +76,7 @@ namespace guess_the_secret_throw
         {
             for (int i = 0; i < _guessedNumbers.Length; i++)
             {
-                _guessedNumbers[i].myGuess = null;
+                _guessedNumbers[i].Number = null;
                 _guessedNumbers[i].Outcome = Outcome.Indefinite;
             }
             Random r = new Random();
