@@ -31,29 +31,39 @@ namespace _1DV402.S2.L1B
         public bool CanMakeGuess
         {
             get 
-            { 
-            
+            {
+                return false;
             }
             set
             {
-
+                return;
             }
 
         }
-        public int Count { get; private set; }
+        public int Count 
+        { 
+            get; 
+            private set; 
+        }
+
+        // How many Guesses i have left - Count,
         public int GuessesLeft
         {
             get
             {
-
+                return MaxNumberOfGuesses - Count;
             }
             set
             {
-
+                return;
             }
         }
+
+        // Init with no return path.
         public void Initialize()
         {
+            // Creating zero, Clearing array
+            Array.Clear(_guessedNumbers, 0, _guessedNumbers.Length);
 
             Random random = new Random();
             Number = random.Next(101);
