@@ -42,7 +42,7 @@ namespace _1DV402.S2.L1B
                     Console.ForegroundColor = ConsoleColor.White;
                     do
                     {
-                        Console.Write("\nGissning {0}: ", secretNumber.Count + 1);
+                        Console.Write(Strings.Guess, secretNumber.Count + 1);
                     } while (!(int.TryParse(Console.ReadLine(), out number) &&
                         number >= 1 && number <= 100));
                     Console.ResetColor();
@@ -58,7 +58,7 @@ namespace _1DV402.S2.L1B
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Ett oväntat fel inträffade! Programmet avbryts.");
+                        Console.WriteLine(Strings.Error);
                         Console.WriteLine(ex.Message);
                         return;
                     }
@@ -66,7 +66,7 @@ namespace _1DV402.S2.L1B
                 }
                 Console.BackgroundColor = ConsoleColor.DarkYellow;
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.Write("\n    Nytt hemligt nummer? [N] avbryter.    ");
+                Console.Write(Strings.Exit);
                 Console.CursorVisible = false;
                 continueGame = Console.ReadKey(true).Key != ConsoleKey.N;
                 Console.CursorVisible = true;

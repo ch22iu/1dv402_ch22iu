@@ -61,7 +61,34 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Rätt gissat! du klarade det på {0} försök.&quot;.
+        ///   Looks up a localized string similar to Ett oväntat fel inträffade! Programmet avbryts..
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nytt hemligt nummer? [N] avbryter.&quot;.
+        /// </summary>
+        internal static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gissning {0}: .
+        /// </summary>
+        internal static string Guess {
+            get {
+                return ResourceManager.GetString("Guess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rätt gissat! du klarade det på {0} försök..
         /// </summary>
         internal static string Guess_Correct {
             get {
@@ -70,7 +97,7 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;{0} är för högt. &quot;.
+        ///   Looks up a localized string similar to {0} är för högt..
         /// </summary>
         internal static string Guess_High {
             get {
@@ -79,7 +106,7 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Du har {0} gissningar kvar. &quot;.
+        ///   Looks up a localized string similar to Du har {0} gissningar kvar..
         /// </summary>
         internal static string Guess_Left {
             get {
@@ -88,7 +115,7 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;{0} är för lågt.&quot;.
+        ///   Looks up a localized string similar to {0} är för lågt..
         /// </summary>
         internal static string Guess_Low {
             get {
@@ -97,11 +124,20 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Du har redan gissat på {0}. Gör om din gissning!&quot;.
+        ///   Looks up a localized string similar to Du har redan gissat på {0}. Gör om din gissning!.
         /// </summary>
         internal static string Guesses {
             get {
                 return ResourceManager.GetString("Guesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string One {
+            get {
+                return ResourceManager.GetString("One", resourceCulture);
             }
         }
         

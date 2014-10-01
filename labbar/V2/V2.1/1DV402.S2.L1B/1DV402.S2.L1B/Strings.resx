@@ -117,20 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Error" xml:space="preserve">
+    <value>Ett oväntat fel inträffade! Programmet avbryts.</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Nytt hemligt nummer? [N] avbryter."</value>
+  </data>
+  <data name="Guess" xml:space="preserve">
+    <value>Gissning {0}: </value>
+  </data>
   <data name="Guesses" xml:space="preserve">
-    <value>"Du har redan gissat på {0}. Gör om din gissning!"</value>
+    <value>Du har redan gissat på {0}. Gör om din gissning!</value>
   </data>
   <data name="Guess_Correct" xml:space="preserve">
-    <value>"Rätt gissat! du klarade det på {0} försök."</value>
+    <value>Rätt gissat! du klarade det på {0} försök.</value>
   </data>
   <data name="Guess_High" xml:space="preserve">
-    <value>"{0} är för högt. "</value>
+    <value>{0} är för högt.</value>
   </data>
   <data name="Guess_Left" xml:space="preserve">
-    <value>"Du har {0} gissningar kvar. "</value>
+    <value>Du har {0} gissningar kvar.</value>
   </data>
   <data name="Guess_Low" xml:space="preserve">
-    <value>"{0} är för lågt."</value>
+    <value>{0} är för lågt.</value>
+  </data>
+  <data name="One" xml:space="preserve">
+    <value />
   </data>
   <data name="Start_Message" xml:space="preserve">
     <value>Gissa det hemliga talet - nivå B</value>

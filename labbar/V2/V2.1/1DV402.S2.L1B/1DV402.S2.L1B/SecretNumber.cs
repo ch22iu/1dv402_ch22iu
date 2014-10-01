@@ -39,15 +39,14 @@ namespace _1DV402.S2.L1B
                     return false; 
                 }
 
-                
                 else
                 { 
                     return true; 
                 }
             }
-            set
+            private set
             {
-                return;
+                _canMakeGuess = value;
             }
 
         }
@@ -94,7 +93,7 @@ namespace _1DV402.S2.L1B
                 throw new ApplicationException();
             }
             // +1 -100
-            if (number < 1 || number > 101)
+            if (number < 1 || number > 100)
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -104,9 +103,11 @@ namespace _1DV402.S2.L1B
                 if (number == guessedNumber)
                 {
                     Console.WriteLine(Strings.Guesses, number);
-                        return false;
+                    return false;
                 }
             }
+
+            // Puts it into the array.
             _guessedNumbers[Count] = number;
 
             Count++;
@@ -114,6 +115,9 @@ namespace _1DV402.S2.L1B
             if (number == Number)
             {
                 Console.WriteLine(Strings.Guess_Correct, Count);
+
+                CanMakeGuess = false;
+                return true;
             }
             else
             {
@@ -129,7 +133,6 @@ namespace _1DV402.S2.L1B
                 Console.WriteLine(Strings.Guess_Left, GuessesLeft);
                 return false;
             }
-            return true;
         }
     }
 }
