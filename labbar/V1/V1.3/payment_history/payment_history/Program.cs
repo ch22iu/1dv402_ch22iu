@@ -38,6 +38,7 @@ namespace payment_history
         {
             {
                 ViewMessage("Press anykey for continue. ESC - Quit!", backgroundColor: ConsoleColor.Blue);
+               // return Console.ReadKey(true).Key != ConsoleKey.Escape
                 if(Console.ReadKey(true).Key == ConsoleKey.Escape)
                     return false;
                 else
@@ -52,7 +53,7 @@ namespace payment_history
         {
             List<int> salaries = new List<int>();
 
-            for (int i = 0; i <= count; i++)
+            for (int i = 1; i <= count; i++)
             {
                 salaries.Add(ReadInt(String.Format("Add {0} salarie: ", i)));
             }
@@ -116,10 +117,10 @@ namespace payment_history
             {
                 for (int j = 0; i + j < salaries.Length && j < 3; j++)
                 {
-                    Array.Sort(salaries);
+                    
                     Console.WriteLine(strings.mySalaries, salaries[i + j]);
                 }
-                Console.WriteLine();
+              
             }
         }
 

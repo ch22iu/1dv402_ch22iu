@@ -8,13 +8,13 @@ namespace payment_history
 {
     public static class myExtensions
     {
-        public static int Dispertion(this int[] source)
+        public static int Dispertion(this int[] thisArray)
         {
-            return source.Max() - source.Min();
+            return thisArray.Max() - thisArray.Min();
         }
-        public static int Median(this int[] source)
+        public static int Median(this int[] thisArray)
         {
-            List<int> values = new List<int>(source);
+            List<int> values = new List<int>(thisArray);
             values.Sort();
 
             while (values.Count() > 2)

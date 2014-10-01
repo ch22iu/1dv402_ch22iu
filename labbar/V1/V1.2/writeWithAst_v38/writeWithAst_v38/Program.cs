@@ -8,9 +8,7 @@ namespace writeWithAst_v38
 {
     class Program
     {
-        // Fixes
-        private const byte max = 0;
-        // Fixes
+        private const byte max = 79;
         static void Main(string[] args)
         {
             loadingContent();
@@ -32,27 +30,24 @@ namespace writeWithAst_v38
             Console.WriteLine();
             Console.WriteLine(Strings.Application_reload);
             Console.WriteLine();
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(1000);
 
             Console.Clear();
         }
         private static byte ReadOddByte(string prompt = null, byte maxValue = max)
         {
             byte columns = 0;
-            // Fixes
-            bool ifSuccess = true;
-            // Fixes
+            bool ifSuccess = false;
             while (!ifSuccess)
             {
                 
                 Console.Write(prompt);
                 string input = Console.ReadLine();
+
                 try
                 {
                     columns = byte.Parse(input);
-                    // Fixes
-                    if (columns % 2 != 1 && columns <= maxValue)
-                    // Fixes
+                    if (columns % 2 != 0 && columns <= maxValue)
                     {
                         ifSuccess = true;
                         break;
@@ -65,7 +60,6 @@ namespace writeWithAst_v38
                         Console.WriteLine(Strings.Error_Message, maxValue);
                         Console.ResetColor();
                     }
-
                 }
                 catch
                 {
@@ -79,59 +73,38 @@ namespace writeWithAst_v38
         }
         private static void RenderAwesomeDaimond(byte maxCount)
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            int aCount = 1;
-            int sCount = maxCount / 2;
-            bool testing = false;
-            while (aCount != 0)
+            for (byte i = 1; i <= maxCount; i += 2)
             {
-                for (int i = 0; i < maxCount; i++)
-                {
-                    rows(sCount, aCount);
-                    if (testing == false)
-                    {
-                        
-                        aCount = aCount + 2;
-                        sCount = sCount - 1;
-                        if (aCount == (maxCount + 2))
-                        {
-                            testing = true;
-                            aCount = aCount - 2;
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            sCount = sCount + 1;
-                        }
-                    }
-                    if (testing == true)
-                    {
-                        if (aCount != 1)
-                        {
-                            aCount = aCount - 2;
-                        }
-                        else
-                        {
-                            aCount = aCount - 1;
-                            break;
-                        }
-                        sCount = sCount + 1;
-                    }
-
-                }
+                rows(maxCount, i);
             }
 
+            for (int i = maxCount - 2; i >= 1; i -= 2)
+            {
+                rows(maxCount, i);
+            }
         }
+
+
+        // This method is rending rows of the daimond and adding spaces and the "*"
         static void rows(int maxCount, int aCount)
         {
-            for (int i = 0; i < maxCount; i++)
+            int space = (maxCount - aCount) / 2;
+
+            for (int i = 0; i < space; i++)
             {
                 Console.Write(Strings.Empty);
             }
-            for (int x = 0; x < aCount; x++)
+            for (int j = 0; j < aCount; j++)
             {
                 Console.Write(Strings.Dot);
             }
+
             Console.WriteLine();
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkRed;
         }
+
+        // Bool is continuing. Running program until its stops or if anykey is press down.
         static bool IsContinuing()
         {
             Console.WriteLine();
@@ -144,14 +117,13 @@ namespace writeWithAst_v38
             Console.WriteLine();
             Console.WriteLine(Strings.Continue_Prompt);
             
-            if(Console.ReadKey(true).Key != ConsoleKey.Escape)
+            if (Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
                 Console.Clear();
                 return true;
             }
             else
             {
-                
                 return false;
             }
         }

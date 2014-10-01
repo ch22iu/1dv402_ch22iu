@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace payment_history {
+namespace moneyexchange_v37 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace payment_history {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class strings {
+    internal class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal strings() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace payment_history {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("payment_history.strings", typeof(strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("moneyexchange_v37.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,47 +61,29 @@ namespace payment_history {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Press any key for new calculation. ESC quit&quot;.
+        ///   Looks up a localized string similar to Enter your total amount of money with decimal(s):.
         /// </summary>
-        internal static string isError {
+        internal static string Cash_Prompt {
             get {
-                return ResourceManager.GetString("isError", resourceCulture);
+                return ResourceManager.GetString("Cash_Prompt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Your input of saleries in sorted list: {0}&quot;.
+        ///   Looks up a localized string similar to Total amount that you pay with:.
         /// </summary>
-        internal static string mySalaries {
+        internal static string Cash_Total {
             get {
-                return ResourceManager.GetString("mySalaries", resourceCulture);
+                return ResourceManager.GetString("Cash_Total", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Your salery: &quot;.
+        ///   Looks up a localized string similar to Tryck tangent för ny beräkning - Esc avslutar..
         /// </summary>
-        internal static string salaries {
+        internal static string Continue_Prompt {
             get {
-                return ResourceManager.GetString("salaries", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;ERROR! &apos;{0}&apos; to high value.&quot;.
-        /// </summary>
-        internal static string toHigh {
-            get {
-                return ResourceManager.GetString("toHigh", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;Input cannot be found.&quot;.
-        /// </summary>
-        internal static string valueError {
-            get {
-                return ResourceManager.GetString("valueError", resourceCulture);
+                return ResourceManager.GetString("Continue_Prompt", resourceCulture);
             }
         }
     }
