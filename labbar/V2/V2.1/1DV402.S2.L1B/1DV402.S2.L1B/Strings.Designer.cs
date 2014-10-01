@@ -61,6 +61,15 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  .
+        /// </summary>
+        internal static string Empty {
+            get {
+                return ResourceManager.GetString("Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ett oväntat fel inträffade! Programmet avbryts..
         /// </summary>
         internal static string Error {
@@ -70,7 +79,7 @@ namespace _1DV402.S2.L1B {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nytt hemligt nummer? [N] avbryter.&quot;.
+        ///   Looks up a localized string similar to Skriv &quot;ja&quot; om du vill starta om programmet. &quot;nej&quot; om du vill avsluta..
         /// </summary>
         internal static string Exit {
             get {
@@ -129,15 +138,6 @@ namespace _1DV402.S2.L1B {
         internal static string Guesses {
             get {
                 return ResourceManager.GetString("Guesses", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string One {
-            get {
-                return ResourceManager.GetString("One", resourceCulture);
             }
         }
         

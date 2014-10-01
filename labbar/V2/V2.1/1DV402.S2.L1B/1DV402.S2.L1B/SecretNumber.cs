@@ -8,17 +8,27 @@ namespace _1DV402.S2.L1B
 {
     public class SecretNumber
     {
+        // MaxGuesses needed to be seven. Cant change it.
         public const int MaxNumberOfGuesses = 7;
+
+        // Looping this.
         private bool _canMakeGuess;
+
+        // Private int _number
         private int _number;
+
+        // Array of guessednumbers.
         private int[] _guessedNumbers;
 
+
+        // My SM method creating an new array. And init a method inside it.
         public SecretNumber()
         {
             _guessedNumbers = new int[7];
 
             Initialize();
         }
+        // My integear variable Number that just return get set _number.
         public int Number
         {
             get
@@ -30,6 +40,8 @@ namespace _1DV402.S2.L1B
                 _number = value; 
             }
         }
+
+        // Enable if user can make a guess or not.
         public bool CanMakeGuess
         {
             get
@@ -75,6 +87,7 @@ namespace _1DV402.S2.L1B
             // Creating zero, Clearing array
             Array.Clear(_guessedNumbers, 0, _guessedNumbers.Length);
 
+            // Doing a random guess number
             Random random = new Random();
             Number = random.Next(101);
 
@@ -112,6 +125,7 @@ namespace _1DV402.S2.L1B
 
             Count++;
 
+            // Ex: 23 correct guess type out correct guess. And jumping out of the do while loop
             if (number == Number)
             {
                 Console.WriteLine(Strings.Guess_Correct, Count);
@@ -121,6 +135,7 @@ namespace _1DV402.S2.L1B
             }
             else
             {
+                // If number to low writing out number to low.
                 if (number < Number)
                 {
                     Console.Write(Strings.Guess_Low, number);
@@ -129,7 +144,7 @@ namespace _1DV402.S2.L1B
                 {
                     Console.Write(Strings.Guess_High, number);
                 }
-
+                // How many guesses left.
                 Console.WriteLine(Strings.Guess_Left, GuessesLeft);
                 return false;
             }

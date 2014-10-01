@@ -20,7 +20,7 @@ namespace _1DV402.S2.L1B
             SecretNumber secretNumber = new SecretNumber();
 
             // Upprepa spelomgångar tills användaren avslutar genom att 
-            // trycka ner tangenten 'N'.
+            // skriva  'nej'.
             do
             {
                 // Initiera ny spelomgång.
@@ -28,7 +28,7 @@ namespace _1DV402.S2.L1B
 
                 // Rensa konsolfönstret och skriv ut ledtext.
                 Console.Clear();
-                Console.BackgroundColor = ConsoleColor.DarkYellow;
+                Console.BackgroundColor = ConsoleColor.DarkRed;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(" ╔══════════════════════════════════════╗ ");
                 Console.WriteLine(" ║ Gissa det hemliga talet mellan 1-100 ║ ");
@@ -64,13 +64,31 @@ namespace _1DV402.S2.L1B
                     }
 
                 }
-                Console.BackgroundColor = ConsoleColor.DarkYellow;
+                Console.BackgroundColor = ConsoleColor.DarkGray;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(Strings.Exit);
                 Console.CursorVisible = false;
-                continueGame = Console.ReadKey(true).Key != ConsoleKey.N;
                 Console.CursorVisible = true;
                 Console.ResetColor();
+                Console.WriteLine(Strings.Empty);
+
+                if (Console.ReadLine() == "ja")
+                {
+                    Console.Clear();
+                    continueGame = true;
+                }
+                else if (Console.ReadLine() == "nej")
+                {
+                    Console.Clear();
+                    continueGame = false;
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    continueGame = false;
+                    Console.Clear();
+                    Environment.Exit(0);
+                }
             } while (continueGame);
         }
     }
