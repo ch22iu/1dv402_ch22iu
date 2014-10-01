@@ -16,6 +16,8 @@ namespace _1DV402.S2.L1B
         public SecretNumber()
         {
             _guessedNumbers = new int[7];
+
+            Initialize();
         }
         public int Number
         {
@@ -30,9 +32,18 @@ namespace _1DV402.S2.L1B
         }
         public bool CanMakeGuess
         {
-            get 
+            get
             {
-                return false;
+                if (Count >= MaxNumberOfGuesses || _canMakeGuess == false)
+                { 
+                    return false; 
+                }
+
+                
+                else
+                { 
+                    return true; 
+                }
             }
             set
             {
