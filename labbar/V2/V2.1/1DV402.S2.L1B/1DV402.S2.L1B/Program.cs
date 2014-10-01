@@ -72,12 +72,13 @@ namespace _1DV402.S2.L1B
                 Console.ResetColor();
                 Console.WriteLine(Strings.Empty);
 
-                if (Console.ReadLine() == "ja")
+                string input = Console.ReadLine();
+                if (input == "ja")
                 {
                     Console.Clear();
                     continueGame = true;
                 }
-                else if (Console.ReadLine() == "nej")
+                else if (input == "nej")
                 {
                     Console.Clear();
                     continueGame = false;
