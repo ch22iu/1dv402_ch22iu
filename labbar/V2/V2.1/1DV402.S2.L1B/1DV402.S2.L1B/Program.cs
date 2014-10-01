@@ -9,7 +9,7 @@ namespace _1DV402.S2.L1B
     {
         static void Main(string[] args)
         {
-            Console.Title = "Gissa det hemliga talet - nivå B";
+            Console.Title = Strings.Start_Message;
 
             // Testa grundläggande krav på klassen SecretNumber.
             Test.Run();
