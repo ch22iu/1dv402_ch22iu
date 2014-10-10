@@ -8,6 +8,40 @@ namespace LB2V3_geometric_figures
 {
     class Program
     {
+
+        static void Main(string[] args)
+        {
+            do
+            {
+                // Skapa upp en array som innehåller slumptal från Randomize metod.
+                Shape[] shapes = RandomizeShapes();
+
+                //Sorterar figurerna genom att jämföra alla areor med varandra med hjälp av metoden CompareTo.
+                //Om CompareTo returnerar ett värde mindre än noll är det aktuella värdet större än det det jämförs med och de byter plats.
+                //Så går man igenom hela arrayen. Nästa genomgång minskas antalet platser som ska gå igenom med ett eftersom ett värde har hamnat på rätt plats.
+                //När så gjorts med alla platser i arrayen kommer de vara i rätt ordning. En så kallad bubbelsortering.
+                int n = shapes.Length - 1;
+                for (int i = 0; i <= n; i++)
+                {
+                    for (int j = n; j > i; j--)
+                    {
+                        if (shapes[j - 1].CompareTo(shapes[j]) < 0)
+                        {
+                            Shape temp = shapes[j - 1];
+                            shapes[j - 1] = shapes[j];
+                            shapes[j] = temp;
+                        }
+                    }
+                }
+
+                ViewShapes(shapes);
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Tryck en tangent för ny beräkning. ESC avslutar");
+                Console.ResetColor();
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+        }
+
         private static readonly Random _randomSeed = new Random();
 
         //Metoden slumpar fram hur många figurer som ska presenteras i ett intervall mellan 5 och 21. Sedan skapas arrayen shapes utifrån det antalet.
@@ -59,37 +93,5 @@ namespace LB2V3_geometric_figures
             }
         }
 
-        static void Main(string[] args)
-        {
-            do
-            {
-                // Skapa upp en array som innehåller slumptal från Randomize metod.
-                Shape[] shapes = RandomizeShapes();
-
-                //Sorterar figurerna genom att jämföra alla areor med varandra med hjälp av metoden CompareTo.
-                //Om CompareTo returnerar ett värde mindre än noll är det aktuella värdet större än det det jämförs med och de byter plats.
-                //Så går man igenom hela arrayen. Nästa genomgång minskas antalet platser som ska gå igenom med ett eftersom ett värde har hamnat på rätt plats.
-                //När så gjorts med alla platser i arrayen kommer de vara i rätt ordning. En så kallad bubbelsortering.
-                int n = shapes.Length - 1;
-                for (int i = 0; i <= n; i++)
-                {
-                    for (int j = n; j > i; j--)
-                    {
-                        if (shapes[j - 1].CompareTo(shapes[j]) < 0)
-                        {
-                            Shape temp = shapes[j - 1];
-                            shapes[j - 1] = shapes[j];
-                            shapes[j] = temp;
-                        }
-                    }
-                }
-
-                ViewShapes(shapes);
-                Console.BackgroundColor = ConsoleColor.Blue;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Tryck en tangent för ny beräkning. ESC avslutar");
-                Console.ResetColor();
-            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
-        }
     }
 }
