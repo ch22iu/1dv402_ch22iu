@@ -27,17 +27,15 @@ namespace moneyexchange_v37
                 uint total = 0;
                 uint charge = 0;
 
-                subtotal = (double)ReadPositiveDouble("Enter your total amount of money with decimal(s):");
+                subtotal = (double)ReadPositiveDouble(Strings.Cash_Prompt);
                 
-                total = Convert.ToUInt32(Math.Round(subtotal, 2
-     ));
+                total = Convert.ToUInt32(Math.Round(subtotal, 2));
 
-                cash = ReadUint("Total amount that you pay with:", total);
+                cash = ReadUint(Strings.Cash_Total, total);
 
                 charge = cash - total;
 
-                receiptsRoundOff = Math.Round(total - subtotal
-    , 2);
+                receiptsRoundOff = Math.Round(total - subtotal, 2);
                 addings = SplitIntoDenom(
                     charge, 
                     denom);
@@ -56,6 +54,8 @@ namespace moneyexchange_v37
                 Console.WriteLine("\n");
                 anyKey = Console.ReadKey();
                 Console.Clear();
+              //  string anyInput = Console.ReadLine();
+
 
                 if ((anyKey.KeyChar == 'Y') || (anyKey.KeyChar == 'y'))
                 {
@@ -63,6 +63,10 @@ namespace moneyexchange_v37
 
                     savingData();
                 }
+                //else if (anyInput == "yes")
+                //{
+                //    savingData();
+                //}
                 else
                 {
                     Environment.Exit(0);
@@ -192,7 +196,7 @@ namespace moneyexchange_v37
                 myDenom[i] = myReceipts;
                 changeValue = changeValue % denom[i];
             }
-            return (myDenom);
+            return myDenom;
         }
         // Skriver ut ett meddelande ifall om något är fel.
         // Om ett meddelande har något fel så skriver den ut annars inte.

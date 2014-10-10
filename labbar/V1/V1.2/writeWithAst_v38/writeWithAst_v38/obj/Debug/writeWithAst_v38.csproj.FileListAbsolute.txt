@@ -6,3 +6,11 @@ C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\w
 C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.exe
 C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.pdb
 C:\Users\chorre\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.csprojResolveAssemblyReference.cache
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\bin\Debug\writeWithAst_v38.exe.config
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.exe
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.pdb
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\bin\Debug\writeWithAst_v38.exe
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\bin\Debug\writeWithAst_v38.pdb
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.csprojResolveAssemblyReference.cache
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.Strings.resources
+C:\Users\ch22iu\Documents\GitHub\1dv402_ch22iu\labbar\V1\V1.2\writeWithAst_v38\writeWithAst_v38\obj\Debug\writeWithAst_v38.csproj.GenerateResource.Cache
