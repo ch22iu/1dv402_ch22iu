@@ -21,6 +21,7 @@ namespace LB2V3_geometric_figures
                 //Så går man igenom hela arrayen. Nästa genomgång minskas antalet platser som ska gå igenom med ett eftersom ett värde har hamnat på rätt plats.
                 //När så gjorts med alla platser i arrayen kommer de vara i rätt ordning. En så kallad bubbelsortering.
                 int n = shapes.Length - 1;
+
                 for (int i = 0; i <= n; i++)
                 {
                     for (int j = n; j > i; j--)
@@ -35,11 +36,15 @@ namespace LB2V3_geometric_figures
                 }
 
                 ViewShapes(shapes);
+
                 Console.BackgroundColor = ConsoleColor.Blue;
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Tryck en tangent för ny beräkning. ESC avslutar");
+                Console.WriteLine();
+                Console.WriteLine(Strings.Ny);
                 Console.ResetColor();
+
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+            
         }
 
         private static readonly Random _randomSeed = new Random();
@@ -75,13 +80,12 @@ namespace LB2V3_geometric_figures
                         shape = new Rectangle(length, width);
                         break;
                 }
-
                 shapes[i] = shape;
             }
             return shapes;
         }
-
-        //Presenterar figurerna med figurnamn vänsterjusterad och resten högerjusterade.
+        
+        //Presenterar figurerna med figurnamn.
         private static void ViewShapes(Shape[] shapes)
         {
             Console.WriteLine("-----------------------------------------------------------");
@@ -89,9 +93,16 @@ namespace LB2V3_geometric_figures
             Console.WriteLine("-----------------------------------------------------------");
             for (int i = 0; i < shapes.Length; i++)
             {
+                breakNow();
                 Console.WriteLine(shapes[i].ToString());
             }
         }
-
+        public static void breakNow()
+        {
+            System.Threading.Thread.Sleep(100);
+        }
+        public static void doingThis()
+        {
+        }
     }
 }
